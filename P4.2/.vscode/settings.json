@@ -3,6 +3,11 @@
         "*.html": "html",
         "**/templates/**/*.html": "django-html",
         "iostream": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "chrono": "cpp",
+        "limits": "cpp",
+        "random": "cpp",
+        "ratio": "cpp",
+        "semaphore": "cpp"
     }
 }
