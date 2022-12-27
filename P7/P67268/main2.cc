@@ -1,21 +1,23 @@
 #include <iostream>
-#include <vector>
+#include<vector>
 using namespace std;
 
-int main(){
-    int n;
-    while (cin >> n) {
-        vector<int> seq(n);
-
-        for (int i = n - 1; i > -1; --i) 
-            cin >> seq[i];
-
-        for (int j = 0; j < n; ++j)
-        {
-            if (j != 0) cout << ' ';
-            cout << seq[j];
-        } 
-
-        cout << endl;
+void print (int& counter, bool& first) {
+    while(counter != 0) {
+        --counter;
+        int n;
+        cin >> n;
+        print(counter, first);
+        if(not first) cout << ' ';
+        first = false;
+        cout << n;
     }
+}
+
+int main () {
+    int counter;
+    bool first = true;
+    cin >> counter;
+    print(counter, first);
+    
 }
