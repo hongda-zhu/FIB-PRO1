@@ -2,20 +2,21 @@
 using namespace std;
 
 char encoded(char c, int k) {
-    if ( c == '_') return ' ';
-    else if (c <= 'z' and c >= 'a') return 'A'+(c-'a'+k) % 26;
-    return c;    
+    if (c >= 'a' && c <= 'z') 
+        return 'A' + (c - 'a' + k) %26;
+    else if(c == '_' ) return c = ' ';
+    else return c;
 }
 
 int main () {
 	int k;
     while (cin >> k) {
         char c;
-        cin >> c;
-        while ( c != '.') {
-            cout << encoded(c,k);
-            cin >> c;
+        bool end = false;
+        while (not end and cin >> c) {
+            if(c != '.') cout << encoded(c, k);
+            else end = true; 
         }
-        cout << endl;
+        cout << endl; 
     }
 }
